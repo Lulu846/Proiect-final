@@ -1,6 +1,8 @@
+import time
+
 import requests as requests
 from selenium.webdriver.common.by import By
-from browser import Browser
+from requests_file.browser import Browser
 
 
 class Generate_token(Browser):
@@ -47,6 +49,7 @@ class Generate_token(Browser):
                 "grant_type":self.GRANT_TYPE
                 }
         response = requests.post(self.HOST + "/api/token", data=data, headers=header)
+        time.sleep(3)
         return response.json()["access_token"]
 
     def authorization(self):

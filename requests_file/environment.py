@@ -1,4 +1,4 @@
-from generate_token import Generate_token
+from requests_file.generate_token import Generate_token
 
 token_object = Generate_token()
 token = token_object.authorization()
